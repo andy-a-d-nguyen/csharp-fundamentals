@@ -33,6 +33,13 @@
   - [Custom Types](#custom-types)
     - [Organizing Types in Namespaces](#organizing-types-in-namespaces)
   - [The using Keyword](#the-using-keyword)
+  - [Enumerations in "C#"](#enumerations-in-c)
+  - [Struct in "C#"](#struct-in-c)
+  - [Classes in C](#classes-in-c)
+    - [Contents of a Class](#contents-of-a-class)
+    - [Access Modifiers](#access-modifiers)
+    - [Constructors](#constructors)
+    - [Properties](#properties)
 
 ## Static Methods
 
@@ -335,3 +342,93 @@ public static int AddNumbers(int a, int b) => a + b;
 ## The using Keyword
 
 - A `using` statement only brings the types within the specified namespace, not the ones in nested namespaces
+
+## Enumerations in "C#"
+
+- Named constants for improved readability
+- Value type
+
+```csharp
+enum EmployeeType
+{
+  Sales, // default value: 0
+  Manager, // default value: 1
+  Research, // default value: 2
+  StoreManager // default value: 3
+}
+
+enum StoreType
+{
+  PieCorner = 10,
+  Seating = 20,
+  FullPieRestaurant = 100,
+  Undefined = 99
+}
+```
+
+## Struct in "C#"
+
+- Represents a custom data structure
+- Value type
+- Can be new'ed
+- Can contain methods and other members
+
+```csharp
+struct Employee
+{
+  public string Name;
+  public string Department;
+  public void GetPaid()
+  {
+    // code to pay out wage
+  }
+}
+```
+
+## Classes in C #
+
+- Blueprint of an object
+- Define data and functionality to work on those data
+- Reference types
+
+### Contents of a Class
+
+- Fields
+- Methods
+- Properties
+- Events
+
+### Access Modifiers
+
+- `public`: Accessible from outside the class
+- `private`: Accessible from only inside the class
+- `protected`: Accessible from the class and its inheritance
+
+### Constructors
+
+- If no constructors are defined, C# will generate a default constructor
+
+### Properties
+
+- Accessors(getters/setters) for fields
+- Wraps data (fields) of a class
+- Hides implementation
+- Define get and set implementation
+
+```csharp
+pubic class Employee
+{
+  private string firstName;
+  public string FirstName
+  {
+    get
+    {
+      return firstName;
+    }
+    set
+    {
+      firstName = value;
+    }
+  }
+}
+```
